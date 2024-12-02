@@ -3,17 +3,17 @@ const input = await response.text();
 const rows = input.split('\n');
 let safeCount = 0;
 
-for (let i = 0; i < 1000; i++) {
-    let row = rows[i];
+rows.forEach((row) => {
     let safe = false;
     let failed = false;
     let prevNumber;
     let dir;
 
-    rows[i].split(' ').forEach((item) => {
+   row.split(' ').forEach((item) => {
         if (failed) {
             return;
         }
+
         const curNumber = parseInt(item);
         if (prevNumber) {
             if (!dir) {
@@ -40,9 +40,9 @@ for (let i = 0; i < 1000; i++) {
     });
 
     if (safe) {
-        safeCount = safeCount + 1;
+        safeCount++;
     }
-}
+});
 
 document.getElementById('2.1').innerHTML = safeCount;
 
