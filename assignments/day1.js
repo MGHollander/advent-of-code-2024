@@ -20,3 +20,19 @@ rowOne.forEach((item, key) => {
 
 document.getElementById('1.1').innerHTML = partOneTotal;
 
+let partTwoTotal = 0;
+rowOne.forEach((itemOne) => {
+  let count = 0;
+  rowTwo.forEach((itemTwo) => {
+    if (itemOne === itemTwo) {
+      count++;
+    }
+  });
+
+  if (count > 0) {
+    partTwoTotal += itemOne * count;
+  }
+});
+
+document.getElementById('1.2').innerHTML = partTwoTotal;
+

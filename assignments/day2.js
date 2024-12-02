@@ -44,6 +44,6 @@ for (let i = 0; i < 1000; i++) {
     }
 }
 
-document.getElementById('day2').innerHTML = safeCount;
+document.getElementById('2.1').innerHTML = safeCount;
 
 

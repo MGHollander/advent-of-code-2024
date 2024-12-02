@@ -1,17 +1,41 @@
 <html lang="en">
 <head>
     <title>Advent of Code 2024</title>
+
+    <style>
+        table {
+            border-spacing: 0
+        }
+        tr:nth-child(even) {
+            background-color: #efefef;
+        }
+        tr > * {
+            padding: 0.5rem;
+        }
+    </style>
 </head>
 <body>
 <h1>Advent of Code 2024</h1>
 <p><a href="https://adventofcode.com/2024/day/1">Go to Advent of Code 2024</a></p>
 
-<h2>Day 1</h2>
-<script src="assignments/day1.js" type="module"></script>
-<p>1.1: <span id="1.1"></span></p>
+<table>
+    <tr>
+        <td></td>
+        <th>Part 1</th>
+        <th>Part 2</th>
+    </tr>
+    <tr>
+        <th>Day 1</th>
+        <td id="1.1"></td>
+        <td id="1.2"></td>
+    </tr>
+    <tr>
+        <th>Day 2</th>
+        <td id="2.1"></td>
+    </tr>
+</table>
 
-<h2>Day 2</h2>
+<script src="assignments/day1.js" type="module"></script>
 <script src="assignments/day2.js" type="module"></script>
-<p>Result: <span id="day2"></span></p>
 </body>
 </html>
