@@ -13,13 +13,10 @@ input.split('\n').forEach((item) => {
 rowOne.sort();
 rowTwo.sort();
 
-const diff = [];
-for (let i = 0; i < rowOne.length; i++) {
-  diff.push(Math.abs(rowTwo[i] - rowOne[i]));
-}
+let partOneTotal = 0;
+rowOne.forEach((item, key) => {
+  partOneTotal += Math.abs(rowTwo[key] - item);
+});
 
-const total = diff.reduce((acc, cur) => acc + cur, 0);
-
-document.getElementById('day1').innerHTML = total;
-
+document.getElementById('1.1').innerHTML = partOneTotal;
 
