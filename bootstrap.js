@@ -15,7 +15,6 @@ for (let i = 1; i < 26; i++) {
     tdTwo.setAttribute('id', `${i}.2`)
     tr.appendChild(tdTwo);
 
-    // Check the day of the month. If it is higher than the current day, the puzzle is not available yet.
     const tdThree = document.createElement('td');
     tdThree.innerHTML = (i > new Date().getDate()) ? `N/A` : `<a href="https://adventofcode.com/2024/day/${i}">puzzle</a>`;
     tr.appendChild(tdThree);
@@ -27,7 +26,7 @@ for (let i = 1; i < 26; i++) {
 for (let i = 1; i < 26; i++) {
     const filePath = `./assignments/day${i}.js`;
     const response = await fetch(filePath);
-    if (response.ok) {
+    if (!response.ok) {
         break;
     }
     import(filePath);
