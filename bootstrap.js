@@ -1,4 +1,5 @@
 const table = document.getElementById('table');
+const date = parseInt(`${new Date().getFullYear()}${(new Date().getMonth() + 1)}${new Date().getDate()}`);
 
 for (let i = 1; i < 26; i++) {
     const tr = document.createElement('tr');
@@ -16,7 +17,8 @@ for (let i = 1; i < 26; i++) {
     tr.appendChild(tdTwo);
 
     const tdThree = document.createElement('td');
-    tdThree.innerHTML = (i > new Date().getDate()) ? `N/A` : `<a href="https://adventofcode.com/2024/day/${i}">puzzle</a>`;
+
+    tdThree.innerHTML = (parseInt(`202412${i}`) <= date) ? `<a href="https://adventofcode.com/2024/day/${i}">puzzle</a>` : `N/A`;
     tr.appendChild(tdThree);
 
     table.appendChild(tr);
